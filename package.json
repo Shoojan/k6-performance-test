@@ -1,16 +1,15 @@
 {
-  "name": "k6-test",
+  "name": "k6-performance-test",
   "version": "1.0.0",
   "description": "",
   "main": "dist/main/stage-test.js",
   "scripts": {
     "build": "npx tsc",
     "test": "npm run build && k6 run dist/stage-test.js",
-    "export": "npm run build && k6 run --out csv=output.csv dist/main/stage-test.js",
-    "monitor": "npm run build && docker run --platform linux/amd64 -it -p 5665:5665 -v $(pwd)/dist/main/:/src ghcr.io/grafana/xk6-dashboard:0.7.5 run --out 'dashboard=period=2s' dist/main/stage-test.js"
+    "export": "npm run build && k6 run --out csv=output.csv dist/main/stage-test.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "sujan.mhrzn2@gmail.com",
   "license": "ISC",
   "devDependencies": {
     "@types/k6": "^0.53.0",
